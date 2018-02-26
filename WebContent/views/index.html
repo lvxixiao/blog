@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="吕系小的博客">
+    <meta name="author" content="吕系小">
+    <link rel="icon" href="http://127.0.0.1:8080/lvxixiao/images/favicon.ico">
+
+    <title>吕系小的博客</title>
+    
+    <script type="text/javascript" src="http://127.0.0.1:8080/lvxixiao/js/jquery.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:8080/lvxixiao/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:8080/lvxixiao/js/home.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:8080/lvxixiao/js/index.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:8080/lvxixiao/js/search.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://127.0.0.1:8080/lvxixiao/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://127.0.0.1:8080/lvxixiao/css/navbar.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8080/lvxixiao/css/blog.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8080/lvxixiao/css/main.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+	
+    <div class="row">
+	  <div class="container">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="http://127.0.0.1:8080/lvxixiao/">首页</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于我 <span class="caret"></span></a>         
+                  <ul class="dropdown-menu">
+              		<li><a href="javascript:void(0)" onclick="getArticlesByTag_id(4)">个人简介</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">技术文章<span class="caret"></span></a> 
+              	  <ul class="dropdown-menu" id="technology">
+              		
+              	  </ul>
+                </li>
+                <li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">读书笔记 <span class="caret"></span></a> 
+              	  <ul class="dropdown-menu" id="book">
+              	
+              	  </ul>
+                </li>
+                <li><a href="http://127.0.0.1:8080/lvxixiao/comment">留言板</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <div class="navbar-form" >
+                    <div class="input-group">
+                        <input name="searchinput" id="searchinput" type="text" class="form-control"  placeholder="搜索">
+                        <span class="input-group-btn">
+      						<button id="btnsearch" class="btn btn-default" >Go!</button>
+      					</span>
+                    </div>
+                </div>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!--/.container-fluid -->
+        </nav>
+       </div><!--/.container end-->
+	  </div>
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="row">
+        <input type="text" id="current" value="0" style="display:none"/>
+        <input type="text" id="articleNumber" value="0" style="display:none"/>
+        <input type="text" id="tag_id" value="0" style="display:none"/>
+        <input type="text" id="pageCount" value="0" style="display:none"/>
+
+        <div class="container" id="articleList"></div>
+      </div>  
+      <div class="row">
+      	<div class="pagelist" id="page"></div>
+      </div>
+      
+      <footer class="blog-footer">
+      <p>All Rights Reserved 版权所有：<a href="http://lvxixiao.com">吕系小</a>        备案号：粤ICP备18015560号</p>
+      </footer> 
+  </body>
+</html>

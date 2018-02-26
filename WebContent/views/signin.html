@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="吕系小的博客后台登陆页面">
+    <meta name="author" content="吕系小">
+    <link rel="icon" href="http://127.0.0.1:8080/lvxixiao/images/favicon.ico">
+
+    <title>Signin</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://127.0.0.1:8080/lvxixiao/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://127.0.0.1:8080/lvxixiao/css/signin.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="http://127.0.0.1:8080/lvxixiao/js/jquery.js"></script>
+    <script type="text/javascript" src="http://malsup.github.io/jquery.form.js"></script>
+	<script type="text/javascript" src="http://127.0.0.1:8080/lvxixiao/js/signin.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin" id="userForm" role="form" action="http://127.0.0.1:8080/lvxixiao/signin" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputAccount" name="username" class="form-control" placeholder="account" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="password" required>
+        <input class="btn btn-lg btn-primary btn-block" id="submitForm" type="button" value="Sign in">
+      </form>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

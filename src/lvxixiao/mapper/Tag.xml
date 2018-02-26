@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lvxixiao.mapper.TagMapper">
+	<select id="getTagByCategory_id" parameterType="_int" resultType="lvxixiao.pojo.Tag">
+		SELECT tag_id,name,number
+		FROM tags
+		WHERE category_id=#{category_id}
+	</select>
+	<select id="getTags" resultType="lvxixiao.pojo.Tag">
+		SELECT tag_id,name,number
+		FROM tags
+	</select>
+	<select id="updateNumber">
+		UPDATE Tags
+		SET number = (SELECT COUNT(*) FROM Articles WHERE Category_id=#{arg0})
+		WHERE tag_id=#{arg1}
+	</select>
+	<select id="getNumberSum" resultType="_int">
+		SELECT SUM(number)
+		FROM Tags
+	</select>
+	<select id="getNumberByTag_id" parameterType="_int" resultType="_int">
+		SELECT number 
+		FROM Tags
+		WHERE tag_id=#{tag_id}
+	</select>
+	<select id="getTagCount" resultType="_int">
+		SELECT COUNT(*)
+		FROM Tags
+	</select>
+	<delete id="delTagByTag_id" parameterType="_int">
+		DELETE FROM Tags WHERE tag_id=#{tag_id}
+	</delete>
+	<select id="getTagList" resultType="lvxixiao.pojo.Tag">
+		SELECT Tag_id,name,category_id
+		FROM Tags
+		LIMIT #{arg0},#{arg1}
+	</select>
+	<select id="getTagByName" parameterType="String" resultType="lvxixiao.pojo.Tag">
+		SELECT Tag_id
+		FROM Tags
+		WHERE name=#{name}
+	</select>
+	<insert id="addTag" parameterType="lvxixiao.pojo.Tag">
+		INSERT INTO Tags(name,category_id)
+		VALUES(#{name},#{category_id})
+	</insert>
+	<select id="getTagByTag_id" parameterType="_int" resultType="String">
+		SELECT name
+		FROM Tags
+		WHERE tag_id=#{tag_id}
+	</select>
+</mapper>

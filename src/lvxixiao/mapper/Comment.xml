@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lvxixiao.mapper.CommentMapper">
+	<insert id="addComment" parameterType="lvxixiao.pojo.Comment">
+		INSERT INTO Comments(comName,comment,dateTime)
+		VALUES(#{comName},#{comment},NOW())
+	</insert>
+	<select id="getComment" resultType="lvxixiao.pojo.Comment">
+		SELECT * FROM Comments
+		ORDER BY comment_id DESC
+		LIMIT #{arg0},#{arg1}
+	</select>
+	<select id="getCommentNumber" resultType="_int">
+		SELECT COUNT(*) FROM Comments
+	</select>
+	<delete id="delCommentByComment_id" parameterType="_int">
+		DELETE FROM Comments WHERE comment_id=#{comment_id}
+	</delete>
+	<select id="getCommentByComment_id" parameterType="_int" resultType="lvxixiao.pojo.Comment">
+		SELECT * FROM Comments
+		WHERE comment_id=#{comment_id}
+	</select>
+</mapper>

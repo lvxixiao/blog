@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="吕系小的博客">
+    <meta name="author" content="吕系小">
+    <link rel="icon" href="http://127.0.0.1:8080/lvxixiao/images/favicon.ico">
+
+    <title>文章修改页面</title>
+    
+    <script type="text/javascript" src="http://127.0.0.1:8080/lvxixiao/js/jquery.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:8080/lvxixiao/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://127.0.0.1:8080/lvxixiao/editormd/editormd.min.js"></script>
+	<script type="text/javascript" src="http://127.0.0.1:8080/lvxixiao/js/update.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="http://127.0.0.1:8080/lvxixiao/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://127.0.0.1:8080/lvxixiao/bootstrap/css/bootstrap-theme.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="http://127.0.0.1:8080/lvxixiao/editormd/css/editormd.min.css"/>
+    
+
+  </head>
+
+  <body>
+	<div class="container">
+	    <form method="post" action="http://127.0.0.1:8080/lvxixiao/admin/update">
+	        <br>
+	        <br>
+	        <div class="row">
+	            <div class="col-lg-6">
+	                <div class="input-group">
+	                    <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" id="categoryBtn">分类
+                            </button>
+	                        <ul class="dropdown-menu" id="categoryList">
+	                        </ul>
+	                    </div>
+	                    <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" id="tagBtn">标签
+                            </button>
+	                        <ul class="dropdown-menu" id="tagList">
+	                        </ul>
+	                    </div>
+	                    <input name="category_id" id="cateoryInput" type="hidden" value="0">
+	                    <input name="tag_id" id="tagInput" type="hidden" value="0">
+	                    <input name="article_id" id="article_id" type="hidden">
+	                    <input type="text" class="form-control" placeholder="标题" id="title" name="title">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <br>
+	        <div id="layout" style="width: 100%;height: 100%">
+			    <div id="test-editormd">
+			    </div>
+			</div>
+			<div class="row">
+			    <div class="col-md-6 col-md-offset-6">
+			        <p>
+			            <input type="submit" class="btn btn-primary btn-lg" role="button" value="发表">
+			        </p>
+			    </div>
+			</div>
+		</form>   
+	</div>
+	<br>    
+  </body>
+</html>
